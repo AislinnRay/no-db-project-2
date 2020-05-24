@@ -1,26 +1,42 @@
 import React from 'react';
-import logo from './logo.svg';
+import ToDoList from './components/ToDoList/ToDoList'
+import ToDoItem from './components/ToDoItem/ToDoItem'
+import axios from 'axios'
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      todosArray: [],
+    };
+  }
+
+  // componentDidMount = () => {
+  //   const todosArray = localStorage.getItem('todosArray')
+  //   if(todosArray) {
+  //     console.log('Has todos',todosArray);
+  //   } else {
+  //     console.log('No todos');
+  //   }
+  // }
+
+  componentDidMount() {
+    axios.get('/api/todos').then((res) => {
+      this.setState({
+        todosArray: res.data,
+      })
+    })
+  }
+
+  render() {
+    return(
+      <div>
+        <ToDoItem></ToDoItem>
+        <ToDoList></ToDoList>
+      </div>
+    );
+  }
 }
 
 export default App;
