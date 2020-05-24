@@ -1,11 +1,14 @@
-const todoData = require('../../premadeToDoListData.json')
-let todos = [];
+// const todoData = require('../../premadeToDoListData.json')
+// let todos = [];
+let todos = require('../../premadeToDoListData.json')
 let id = 0;
 
 module.exports = {
   create: (req, res) => {
-    const { text, time } = req.body;
-    todos.push({ id, text, time });
+    //console.log(req.body)
+    //console.log(req)
+    const { text, completed } = req.body;
+    todos.push({ id, text, completed });
     id++;
     res.status(200).send(todos);
   },
@@ -23,7 +26,7 @@ module.exports = {
     todos[todoIndex] = {
       id: todo.id,
       text: text || todo.text,
-      time: todo.time
+      completed: false
     };
 
     res.status(200).send(todos);
