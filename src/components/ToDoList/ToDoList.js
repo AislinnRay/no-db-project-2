@@ -1,5 +1,6 @@
 import React from 'react';
-import ToDoItem from '../ToDoItem/ToDoItem'
+import ToDoItem from '../ToDoItem/ToDoItem';
+import './ToDoListstyle.css';
 
 class ToDoList extends React.Component {
 
@@ -25,9 +26,9 @@ class ToDoList extends React.Component {
         );
     }
 
-    // updateTodo = (todoAddStr) => {
-    //     this.props.updateTodoFn(todoAddStr);
-    // }
+    updateTodo = (todoAddStr) => {
+        this.props.updateTodoF(todoAddStr);
+    }
 
 }
 

@@ -1,7 +1,9 @@
 import React from 'react';
-import ToDoList from './components/ToDoList/ToDoList'
-import AddToDo from './components/AddToDo/AddToDo'
-import axios from 'axios'
+import ToDoList from './components/ToDoList/ToDoList';
+import AddToDo from './components/AddToDo/AddToDo';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import axios from 'axios';
 import './App.css';
 
 class App extends React.Component {
@@ -78,17 +80,23 @@ class App extends React.Component {
 
   render() {
     return(
-      <div>
-        <AddToDo 
+      <div className="App">
+        <Header/>
+        <span className="Card-Container">
+        <div className="Card">
+        <AddToDo className="AddToDo"
         refreshTodoArray={this.refreshTodoArray}
         addTodoFn={this.addTodo}/>
-        <ToDoList  //stuff inside of the <> is just defining properties. does not make new variables 
+        <ToDoList  className="ToDoList" //stuff inside of the <> is just defining properties. does not make new variables 
         deleteTodo={this.deleteTodo} //name the prop 
         updateTodo={this.updateTodo}
         //updateTodoFn={this.updateTodo} 
         todosArray={this.state.todosArray}
         >
         </ToDoList>
+        </div>
+        </span>
+        <Footer/>
       </div>
     );
   }

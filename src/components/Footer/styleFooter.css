@@ -1,0 +1,22 @@
+.Footer-Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to right, #d7d2cc 0%, #304352 100%);
+    position: absolute;
+    bottom: auto;
+    width: 100%;
+    height: 100px;            /* Footer height */
+}
+    
+.Footer-Image {
+    max-height: 100px;
+}
+.Footer-text {
+    font-size: 14px;
+    font-family: "Courier New", Courier, monospace;
+}
+
+.Footer-Image-Two {
+    height: 150px;
+}

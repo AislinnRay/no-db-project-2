@@ -1,5 +1,6 @@
 import React from 'react';
-import axios from 'axios'
+import axios from 'axios';
+import './AddToDostyle.css';
 
 class AddToDo extends React.Component {
 
@@ -9,7 +10,7 @@ class AddToDo extends React.Component {
             todoAddStr: ''
         }
     }
-    
+
     updateInput = (e) => {
         this.setState({ todoAddStr: e.target.value });
     }

@@ -1,3 +1,28 @@
 .App {
-  text-align: center;
+  min-height: 90vh;
+  /* text-align: center; */ 
+  background-image: linear-gradient(-20deg, #616161 0%, #9bc5c3 100%);
 }
+
+.Card-Container {
+  display:flex;
+  justify-content: center;
+}
+
+.Card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  border: 2px solid rgb(36, 36, 36);
+  border-radius: 7px;
+ 	background-blend-mode: normal, multiply;
+  padding: 20px;
+  width: 60vw;
+  margin: 100px;
+}
+
+/* .AddToDo {
+  font-size: 36pt;
+} */

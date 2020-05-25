@@ -1,10 +1,18 @@
 [
     {"id": 1,
-    "text": "list 1",
+    "text": "Make a to-do list",
     "completed": false
     },
     {"id": 2,
-    "text": "list 2",
+    "text": "Check off first item",
+    "completed": false
+        },
+    {"id": 3,
+    "text": "Realize you already did 2 things on the list",
+    "completed": false
+        },
+    {"id": 4,
+    "text": "Reward yourself with a nice, long nap",
     "completed": false
         }
     ]

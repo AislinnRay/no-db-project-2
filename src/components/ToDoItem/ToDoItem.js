@@ -1,5 +1,5 @@
 import React from 'react';
-import './style.css';
+import './ToDoItemstyle.css';
 
 class ToDoItem extends React.Component {
     constructor(){
@@ -10,7 +10,7 @@ class ToDoItem extends React.Component {
         }
     }
     toggleTodo = () => {
-        this.props.updateTodoFn(this.props.todoElement);
+        this.props.updateTodo(this.props.todoElement);
     }
 
     toggleEdit() {
@@ -29,16 +29,15 @@ class ToDoItem extends React.Component {
         const {todoElement, deleteTodo, updateTodo} = this.props
         console.log(this.state.isEditing)
         return(
-        <div className="todoItem" //onClick={this.toggleTodo}
+        <div className="Item" className={"todoItem" + (todoElement.completed ? ' completed' : '')} onClick={this.toggleTodo}
         >
-            {this.state.isEditing ? <input value={this.state.todoAddStr} onChange={(e) => this.updateInput(e)} type='text'/> :<div>{todoElement.text}</div>}
+            {this.state.isEditing ? <input value={this.state.todoAddStr} onChange={(e) => this.updateInput(e)} type='text'/> :<p className="list-text">{todoElement.text}</p>}
             <button onClick={ () => deleteTodo(todoElement.id)}>Delete</button>
             {this.state.isEditing && <button onClick={ () => {
                 updateTodo(todoElement.id, {text: this.state.userInput})
                 this.toggleEdit()}
             }>Save</button>}  
             {/* //&& implies there is a : null at the end of the ternary which is required when using ?  */}
-
             <button onClick={() => this.toggleEdit()}> {this.state.isEditing ? "Cancel": "Edit"}</button>
             </div>
         );
