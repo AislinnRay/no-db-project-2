@@ -13,7 +13,8 @@
     max-height: 100px;
 }
 .Footer-text {
-    font-size: 14px;
+    font-size: 18px;
+    font-weight: 600;
     font-family: "Courier New", Courier, monospace;
 }
 
