@@ -10,9 +10,12 @@
 
 #addTodoInput {
     display:flex;
-    padding: 30px;
+    padding: 3vh;
+    margin:5px;
     font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
     font-size: 16pt;
+    color: rgb(41, 55, 63);
+    font-weight: 700;
 }
 
 button{

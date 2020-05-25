@@ -31,7 +31,7 @@ class ToDoItem extends React.Component {
         return(
         <div className="Item" className={"todoItem" + (todoElement.completed ? ' completed' : '')} onClick={this.toggleTodo}
         >
-            {this.state.isEditing ? <input value={this.state.todoAddStr} onChange={(e) => this.updateInput(e)} type='text'/> :<p className="list-text">{todoElement.text}</p>}
+            {this.state.isEditing ? <input className="edit-input" value={this.state.todoAddStr} onChange={(e) => this.updateInput(e)} type='text'/> :<p className="list-text">{todoElement.text}</p>}
             <button onClick={ () => deleteTodo(todoElement.id)}>Delete</button>
             {this.state.isEditing && <button onClick={ () => {
                 updateTodo(todoElement.id, {text: this.state.userInput})

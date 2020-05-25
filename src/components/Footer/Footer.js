@@ -1,7 +1,7 @@
 import React from 'react';
 import './styleFooter.css';
 
-function Footer() {
+function Footer(props) {
   return (
     <footer className="Footer-Container">
       <img className="Footer-Image"

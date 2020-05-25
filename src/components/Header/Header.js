@@ -1,7 +1,7 @@
 import React from 'react';
 import './styleHeader.css';
 
-function Header() {
+function Header(props) {
   return (
     <header className="Header-Container">
       <img className="Branch"

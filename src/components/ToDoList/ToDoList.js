@@ -2,10 +2,12 @@ import React from 'react';
 import ToDoItem from '../ToDoItem/ToDoItem';
 import './ToDoListstyle.css';
 
-class ToDoList extends React.Component {
-
-    render() {
-        const { todosArray } = this.props; // ===  const todosArray=this.props.todosArray
+function ToDoList(props) {
+    const updateTodo = (todoAddStr) => {
+        props.updateTodo(todoAddStr);
+    }
+    // render() {
+        const { todosArray } = props; // ===  const todosArray=this.props.todosArray
 
         return(
         <div className='todoListContainer'>
@@ -14,8 +16,8 @@ class ToDoList extends React.Component {
                     //console.log(_todo)
                     return(
                         <ToDoItem 
-                        deleteTodo={this.props.deleteTodo} // this can be destructured to deleteTodo = {deleteTodo}
-                        updateTodo={this.props.updateTodo}
+                        deleteTodo={props.deleteTodo} // this can be destructured to deleteTodo = {deleteTodo}
+                        updateTodo={props.updateTodo}
                         //updateTodoFn={this.updateTodo} 
                         key={_index} 
                         todoElement={_todo}/>
@@ -24,12 +26,11 @@ class ToDoList extends React.Component {
             }
         </div>
         );
-    }
+    // }
 
-    updateTodo = (todoAddStr) => {
-        this.props.updateTodo(todoAddStr);
-    }
-
+    // updateTodo = (todoAddStr) => {
+    //     this.props.updateTodo(todoAddStr);
+    // }  this is not used in a functional component
 }
 
 export default ToDoList
