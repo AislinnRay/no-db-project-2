@@ -12,6 +12,7 @@ class App extends React.Component {
     this.state = {
       todosArray: [],
     };
+    this.refreshTodoArray = this.refreshTodoArray.bind(this)
   }
 
   // testing on local storage throws errors :(
@@ -56,7 +57,7 @@ class App extends React.Component {
     })
   }
 
-  refreshTodoArray = (array) => {  //taking in res.data (which is an array)
+  refreshTodoArray(array) {  //taking in res.data (which is an array)
     this.setState({todosArray: array}) //this is overriding whatever was on todosArray to be what was on res.data
   }
 

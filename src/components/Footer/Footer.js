@@ -9,10 +9,12 @@ function Footer() {
       alt="Zen Rocks"
       />
       <p className="Footer-text">May 25, 2020</p>
-      <img className="Footer-Image-Two"
+      {/* <a> */}
+        <img className="Footer-Image-Two"
       src="https://i.dlpng.com/static/png/6332298_preview.png"
       alt="Social Media"
       />
+      {/* </a> */}
     </footer>
   )
 }

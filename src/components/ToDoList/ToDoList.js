@@ -27,7 +27,7 @@ class ToDoList extends React.Component {
     }
 
     updateTodo = (todoAddStr) => {
-        this.props.updateTodoF(todoAddStr);
+        this.props.updateTodo(todoAddStr);
     }
 
 }
